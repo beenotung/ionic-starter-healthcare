@@ -1,17 +1,37 @@
+<!--
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
+-->
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <ion-row>
+    <ion-col text-center>
+      <img src="../../assets/imgs/logo.png">
+    </ion-col>
+  </ion-row>
+
+  <h2>Welcome to e-HealthCare!</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input [(ngModel)]="user.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" placeholder="At least 8 digits"></ion-input>
+    </ion-item>
+    <p text-center>
+      <a class="forget" (click)="forget()">
+        Forget password?
+      </a>
+    </p>
+    <ion-buttons text-center>
+      <button ion-button (click)="login()">Login</button>
+      <button ion-button color="secondary" (click)="signup()">Signup</button>
+    </ion-buttons>
+  </ion-list>
 </ion-content>
